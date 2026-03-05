@@ -9,7 +9,7 @@ public class ConverterApp {
 
     static void main() {
 
-        //Menu displayed in the console
+        //Welcome message
         IO.println(String.format("Hello and welcome to my Converter Application !!!!!!"));
         IO.println("============== Converter Application ==============");
         menu();
@@ -41,6 +41,7 @@ public class ConverterApp {
                     IO.println("Wrong option entered. Please enter option in range (1,2,3,4). Thanks !!!!");
                     break;
             }
+            //To check if the user has to proceed with conversion application or not
             IO.println("Do you want to continue with Converter App?(Yes/No)");
             boolean isRight = true;
             while (isRight) {
@@ -62,6 +63,7 @@ public class ConverterApp {
         }
     }
 
+    //Menu for the conversion application
     static void menu() {
         IO.println("Choose an option (1,2,3,4) :");
         IO.println("1. Currency Converter");

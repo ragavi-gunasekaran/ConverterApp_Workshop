@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class ConverterImplementation {
 
+    //Scanner class to scan the input from console
     static Scanner scanner = new Scanner(System.in);
 
     static void currencyConverter() {
@@ -19,7 +20,6 @@ public class ConverterImplementation {
         IO.println("3. SEK to EUR");
         IO.println("4. EUR to SEK");
         IO.print("Choose option: ");
-
         int choice = readInt();
         double result = 0;
         switch (choice) {
@@ -61,7 +61,6 @@ public class ConverterImplementation {
         IO.println("1. Celsius to Fahrenheit");
         IO.println("2. Fahrenheit to Celsius");
         IO.println("Choose an option: ");
-
         int choice = readInt();
         double result = 0.0;
         switch (choice) {
@@ -87,9 +86,7 @@ public class ConverterImplementation {
         IO.println("1. Meters to Kilometers");
         IO.println("2. Kilometers to Meters");
         IO.print("Choose option: ");
-
         int choice = readInt();
-
         switch (choice) {
             case 1:
                 IO.print("Enter Meters : ");
@@ -108,15 +105,18 @@ public class ConverterImplementation {
         }
     }
 
+    // To display the final output message
     static void printResult(String message) {
         IO.println("Result : " + message);
         IO.println("Converted on : " + DateTimeUtil.dateTimeValue());
     }
 
+    //To format the output value
     static String format(double value) {
         return String.format("%.2f", value);
     }
 
+    //Common method to get the Int value from console
     static int readInt() {
         while (!scanner.hasNextInt()) {
             IO.println("Please enter correct value to proceed");
@@ -125,6 +125,7 @@ public class ConverterImplementation {
         return scanner.nextInt();
     }
 
+    //Common method to get the double value from console
     static double readDouble() {
         while (!scanner.hasNextDouble()) {
             IO.println("Please enter correct value to proceed");
@@ -133,8 +134,9 @@ public class ConverterImplementation {
         return scanner.nextDouble();
     }
 
-    static void inputValidation(double amount){
-        if (amount < 0) {
+    //To Validate the input value entered by user to process conversion
+    static void inputValidation(double value){
+        if (value < 0) {
             IO.println("Negative values cannot be processed !!!");
             return;
         }
