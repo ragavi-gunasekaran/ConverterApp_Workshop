@@ -20,15 +20,21 @@ public class ConverterApp {
             switch (menu) {
                 case 1:
                     IO.println("Currency Converter");
-                    currencyConverter();
+                    IO.println("Please enter the SEK value to convert to EURO");
+                    double sekValue = scan.nextDouble();
+                    ConverterImplementation.currencyConverter(sekValue);
                     break;
                 case 2:
                     IO.println("Temperature Converter");
-                    temperatureConverter();
+                    IO.println("Please enter the Celsius to convert to Fahrenheit");
+                    int celsiusValue = scan.nextInt();
+                    ConverterImplementation.currencyConverter(celsiusValue);
                     break;
                 case 3:
                     IO.println("Length Converter");
-                    lengthConverter();
+                    IO.println("Please enter the Meters to convert to Kilometers");
+                    long meterValue = scan.nextLong();
+                    ConverterImplementation.lengthConverter(meterValue);
                     break;
                 case 4:
                     IO.println("Exiting the Converter Application, Thanks !!!!");
@@ -54,25 +60,6 @@ public class ConverterApp {
                 }
             }
         }
-    }
-
-     static void currencyConverter(){
-        //Currency Converter – SEK ↔ USD, SEK ↔ EUR
-        IO.println("Please enter the SEK value to convert to EURO");
-        double sekValue = scan.nextDouble();
-        CurrencyConverter.getConvertedCurrency(sekValue);
-    }
-
-    static void temperatureConverter(){
-         //Temperature Converter – Celsius ↔ Fahrenheit
-         IO.println("Please enter the Celsius to convert to Fahrenheit");
-         int celsiusValue = scan.nextInt();
-    }
-
-    static void lengthConverter(){
-         //Length Converter – Meters ↔ Kilometers
-         IO.println("Please enter the Meters to convert to Kilometers");
-         long meterValue = scan.nextLong();
     }
 
     static void menu() {
