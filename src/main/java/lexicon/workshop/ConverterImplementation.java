@@ -5,12 +5,10 @@ import java.util.Scanner;
 public class ConverterImplementation {
 
     static Scanner scanner = new Scanner(System.in);
-    static boolean value = true;
-
 
     static void currencyConverter() {
         //Currency Converter – SEK ↔ USD, SEK ↔ EUR
-        IO.println("Current conversion rate for SEK ↔ USD, SEK ↔ EUR as of " + DateTimeUtil.dateTimeValue() + " is ");
+        IO.println("Current conversion rate for SEK ↔ USD, SEK ↔ EUR as of " + DateTimeUtil.dateTimeValue() + " is  ");
         IO.println("1 SEK = 0.0932 EUR");
         IO.println("1 EURO = 0.0932 SEK");
         IO.println("1 USD = 0.0932 SEK");
@@ -23,30 +21,35 @@ public class ConverterImplementation {
         IO.print("Choose option: ");
 
         int choice = readInt();
-        IO.print("Enter amount: ");
-        double amount = readDouble();
-
-        if (amount < 0) {
-            IO.println("Negative values cannot be processed !!!");
-            return;
-        }
         double result = 0;
         switch (choice) {
             case 1:
-                result = amount * 0.092;
-                printResult(amount + " SEK = " + format(result) + " USD");
+                IO.print("Enter SEK amount: ");
+                double sekAmount = readDouble();
+                inputValidation(sekAmount);
+                result = sekAmount * 0.092;
+                printResult(sekAmount + " SEK = " + format(result) + " USD");
                 break;
             case 2:
-                result = amount / 0.092;
-                printResult(amount + " USD = " + format(result) + " SEK");
+                IO.print("Enter USD amount: ");
+                double usdAmount = readDouble();
+                inputValidation(usdAmount);
+                result = usdAmount / 0.092;
+                printResult(usdAmount + " USD = " + format(result) + " SEK");
                 break;
             case 3:
-                result = amount * 0.085;
-                printResult(amount + " SEK = " + format(result) + " EUR");
+                IO.print("Enter SEK amount: ");
+                double sekValue = readDouble();
+                inputValidation(sekValue);
+                result = sekValue * 0.085;
+                printResult(sekValue + " SEK = " + format(result) + " EUR");
                 break;
             case 4:
-                result = amount / 0.085;
-                printResult(amount + " EUR = " + format(result) + " SEK");
+                IO.print("Enter EURO amount: ");
+                double euroValue = readDouble();
+                inputValidation(euroValue);
+                result = euroValue / 0.085;
+                printResult(euroValue + " EUR = " + format(result) + " SEK");
                 break;
             default:
                 IO.println("Wrong option ..!!! Exiting Currency Conversion");
@@ -60,17 +63,19 @@ public class ConverterImplementation {
         IO.println("Choose an option: ");
 
         int choice = readInt();
-        IO.print("Enter value: ");
-        double value = readDouble();
         double result = 0.0;
         switch (choice) {
             case 1:
-                result = (value * 9 / 5) + 32;
-                printResult(value + " °C = " + format(result) + " °F");
+                IO.print("Enter Celsius : ");
+                double celsius = readDouble();
+                result = (celsius * 9 / 5) + 32;
+                printResult(celsius + " °C = " + format(result) + " °F");
                 break;
             case 2:
-                result = (value - 32) * 5 / 9;
-                printResult(value + " °F = " + format(result) + " °C");
+                IO.print("Enter Fahrenheit : ");
+                double fahrenheit = readDouble();
+                result = (fahrenheit - 32) * 5 / 9;
+                printResult(fahrenheit + " °F = " + format(result) + " °C");
                 break;
             default:
                 IO.println("Wrong option choosed!!!!!");
@@ -84,20 +89,19 @@ public class ConverterImplementation {
         IO.print("Choose option: ");
 
         int choice = readInt();
-        IO.print("Enter value: ");
-        double value = readDouble();
-
-        if (value < 0) {
-            IO.println("Negative numbers cannot be processed");
-            return;
-        }
 
         switch (choice) {
             case 1:
-                printResult(value + " m = " + format(value / 1000) + " km");
+                IO.print("Enter Meters : ");
+                double meter = readDouble();
+                inputValidation(meter);
+                printResult(meter + " m = " + format(meter / 1000) + " km");
                 break;
             case 2:
-                printResult(value + " km = " + format(value * 1000) + " m");
+                IO.print("Enter Kilometers : ");
+                double km = readDouble();
+                inputValidation(km);
+                printResult(km + " km = " + format(km * 1000) + " m");
                 break;
             default:
                 IO.println("Wrong option choosed!!!!!");
@@ -149,5 +153,12 @@ public class ConverterImplementation {
 //            }
 //        }
 //    }
+
+    static void inputValidation(double amount){
+        if (amount < 0) {
+            IO.println("Negative values cannot be processed !!!");
+            return;
+        }
+    }
 
 }
