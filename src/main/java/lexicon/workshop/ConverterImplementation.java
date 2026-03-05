@@ -109,8 +109,8 @@ public class ConverterImplementation {
     }
 
     static void printResult(String message) {
-        IO.println("Result: " + message);
-        IO.println("Converted at: " + DateTimeUtil.dateTimeValue());
+        IO.println("Result : " + message);
+        IO.println("Converted on : " + DateTimeUtil.dateTimeValue());
     }
 
     static String format(double value) {
@@ -119,7 +119,7 @@ public class ConverterImplementation {
 
     static int readInt() {
         while (!scanner.hasNextInt()) {
-            IO.println("Invalid input. Enter number.");
+            IO.println("Please enter correct value to proceed");
             scanner.next();
         }
         return scanner.nextInt();
@@ -127,32 +127,11 @@ public class ConverterImplementation {
 
     static double readDouble() {
         while (!scanner.hasNextDouble()) {
-            IO.println("Invalid input. Enter numeric value.");
+            IO.println("Please enter correct value to proceed");
             scanner.next();
         }
         return scanner.nextDouble();
     }
-
-//    static void validationQuestion() {
-//        IO.println("Do you want to continue with Conversion?(Yes/No)");
-//        boolean isRight = true;
-//        while (isRight) {
-//            String option = scanner.next();
-//            if (option.equalsIgnoreCase("Yes")) {
-//                menuCurrency();
-//                int menu = scanner.nextInt();
-//                value = true;
-//                isRight = false;
-//            } else if (option.equalsIgnoreCase("No")) {
-//                value = false;
-//                IO.println("Exiting , Thanks !!!!!!");
-//                isRight = false;
-//            } else {
-//                IO.println("Wrong option entered. Please enter Yes or No");
-//                isRight = true;
-//            }
-//        }
-//    }
 
     static void inputValidation(double amount){
         if (amount < 0) {
@@ -160,5 +139,4 @@ public class ConverterImplementation {
             return;
         }
     }
-
 }
