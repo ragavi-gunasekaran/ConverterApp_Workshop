@@ -37,6 +37,9 @@ public class ConverterApp {
                     IO.println("Exiting the Converter Application, Thanks !!!!");
                     value = false;
                     break;
+                default:
+                    IO.println("Wrong option entered. Please enter option in range (1,2,3,4). Thanks !!!!");
+                    break;
             }
             IO.println("Do you want to continue with Converter App?(Yes/No)");
             boolean isRight = true;
