@@ -39,10 +39,11 @@ public class ConverterApp {
         }
     }
 
-    static void currencyConverter(){
+     static void currencyConverter(){
         //Currency Converter – SEK ↔ USD, SEK ↔ EUR
         IO.println("Please enter the SEK value to convert to EURO");
         double sekValue = scan.nextDouble();
+        CurrencyConverter.getConvertedCurrency(sekValue);
     }
 
     static void temperatureConverter(){
