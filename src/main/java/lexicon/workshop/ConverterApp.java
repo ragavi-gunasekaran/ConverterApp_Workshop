@@ -11,7 +11,7 @@ public class ConverterApp {
 
         //Menu displayed in the console
         IO.println(String.format("Hello and welcome to my Converter Application !!!!!!"));
-        IO.println("============== Converter App ==============");
+        IO.println("============== Converter Application ==============");
         menu();
         // Get the choice of converter from the user
         int menu = scan.nextInt();
@@ -19,22 +19,19 @@ public class ConverterApp {
         while (value) {
             switch (menu) {
                 case 1:
-                    IO.println("Currency Converter");
-                    IO.println("Please enter the SEK value to convert to EURO");
-                    double sekValue = scan.nextDouble();
-                    ConverterImplementation.currencyConverter(sekValue);
+                    IO.println("============ Currency Converter ============");
+                    IO.println("Currency Converter ====> SEK ↔ USD, SEK ↔ EUR");
+                    ConverterImplementation.currencyConverter();
                     break;
                 case 2:
-                    IO.println("Temperature Converter");
-                    IO.println("Please enter the Celsius to convert to Fahrenheit");
-                    int celsiusValue = scan.nextInt();
-                    ConverterImplementation.currencyConverter(celsiusValue);
+                    IO.println("============ Temperature Converter ============");
+                    IO.println("Temperature Converter ====> Celsius ↔ Fahrenheit");
+                    ConverterImplementation.temperatureConverter();
                     break;
                 case 3:
-                    IO.println("Length Converter");
-                    IO.println("Please enter the Meters to convert to Kilometers");
-                    long meterValue = scan.nextLong();
-                    ConverterImplementation.lengthConverter(meterValue);
+                    IO.println("============ Length Converter ============");
+                    IO.println("Length Converter ====> Meters ↔ Kilometers");
+                    ConverterImplementation.lengthConverter();
                     break;
                 case 4:
                     IO.println("Exiting the Converter Application, Thanks !!!!");
