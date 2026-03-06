@@ -4,6 +4,7 @@ This is a console-based Java application that converts values between different 
 1. Currency Converter
 2. Temperature Converter
 3. Length Converter
+4. BMI Calculator
 
 I have designed this application with 3 classes.
 1) ConverterApp -- It is the main class of the application, which has all the menu's and directions to process the conversion.
