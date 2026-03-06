@@ -34,11 +34,16 @@ public class ConverterApp {
                     ConverterImplementation.lengthConverter();
                     break;
                 case 4:
+                    IO.println("============ BMI Calculator ============");
+                    IO.println("BMI Calculator – Compute BMI");
+                    ConverterImplementation.bmiCalculator();
+                    break;
+                case 5:
                     IO.println("Exiting the Converter Application, Thanks !!!!");
                     value = false;
                     break;
                 default:
-                    IO.println("Wrong option entered. Please enter option in range (1,2,3,4). Thanks !!!!");
+                    IO.println("Wrong option entered. Please enter option in range (1,2,3,4,5). Thanks !!!!");
                     break;
             }
             //To check if the user has to proceed with conversion application or not
@@ -65,10 +70,11 @@ public class ConverterApp {
 
     //Menu for the conversion application
     static void menu() {
-        IO.println("Choose an option (1,2,3,4) :");
+        IO.println("Choose an option (1,2,3,4,5) :");
         IO.println("1. Currency Converter");
         IO.println("2. Temperature Converter");
         IO.println("3. Length Converter");
-        IO.println("4. Exit");
+        IO.println("4. BMI Calculator");
+        IO.println("5. Exit");
     }
 }

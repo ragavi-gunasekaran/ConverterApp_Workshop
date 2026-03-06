@@ -105,6 +105,20 @@ public class ConverterImplementation {
         }
     }
 
+    //To calculate the BMI level based on height and weight of a person
+    static void bmiCalculator() {
+        IO.print("Enter your weight (kg): ");
+        double weight = readDouble();
+        IO.print("Enter your height (m): ");
+        double height = readDouble();
+        if (weight <= 0 || height <= 0) {
+            IO.println("Please enter correct height and weight.");
+            return;
+        }
+        double bmi = weight / (height * height);
+        printResult("Your BMI level is = " + format(bmi));
+    }
+
     // To display the final output message
     static void printResult(String message) {
         IO.println("Result : " + message);
